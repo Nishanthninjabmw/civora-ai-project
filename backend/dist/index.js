@@ -11,6 +11,7 @@ const db_1 = require("./config/db");
 const auth_1 = __importDefault(require("./routes/auth"));
 const reports_1 = __importDefault(require("./routes/reports"));
 dotenv_1.default.config();
+const PORT = process.env.PORT || 5001;
 const path_1 = __importDefault(require("path"));
 const app = (0, express_1.default)();
 // Enable full CORS support for mobile Capacitor apps, localhost, and web clients
@@ -40,7 +41,6 @@ app.get('/api/health', (req, res) => {
 });
 app.use('/api/auth', auth_1.default);
 app.use('/api/reports', reports_1.default);
-const PORT = process.env.PORT || 5001;
 const startServer = async () => {
     const server = app.listen(PORT, () => {
         console.log(`Server running on port ${PORT}`);

@@ -8,6 +8,8 @@ import reportRoutes from './routes/reports';
 
 dotenv.config();
 
+const PORT = process.env.PORT || 5001;
+
 import path from 'path';
 
 const app = express();
@@ -43,8 +45,6 @@ app.get('/api/health', (req, res) => {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/reports', reportRoutes);
-
-const PORT = process.env.PORT || 5001;
 
 const startServer = async () => {
   const server = app.listen(PORT, () => {
