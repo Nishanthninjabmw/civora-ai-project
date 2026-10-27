@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-brand-dark text-brand-white font-sans antialiased;
+  }
+}
+
+.glass-panel {
+  @apply bg-brand-charcoal/80 backdrop-blur-md border border-brand-border rounded-lg shadow-lg;
+}
+
+.btn-primary {
+  @apply bg-brand-copper hover:bg-brand-copperHover text-brand-dark font-semibold py-2 px-4 rounded-md transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply bg-transparent hover:bg-brand-charcoal border border-brand-border text-brand-white font-medium py-2 px-4 rounded-md transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.input-field {
+  @apply w-full bg-brand-dark border border-brand-border rounded-md px-4 py-2 text-brand-white focus:outline-none focus:border-brand-copper focus:ring-1 focus:ring-brand-copper transition-colors;
+}
+
+.label-text {
+  @apply block text-sm font-medium text-brand-gray mb-1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f1115;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2e39;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3e2723;
+}
